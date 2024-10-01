@@ -25,16 +25,16 @@ const Login = () => {
               <form>
                 <div className="form-group">
                   <label htmlFor="username">Username</label>
-                  <input type="text" className="form-control" id="username" name="username" placeholder='Username'required />
+                  <input type="text" className="form-control" id="username" name="username" required />
                 </div>
                 <div className="form-group">
                   <label htmlFor="password">Password</label>
-                  <input type="password" className="form-control" id="password" name="password" placeholder='Password' required />
+                  <input type="password" className="form-control" id="password" name="password"  required />
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Login</button>
                 <div className='link-row'>
                     <a href="#" className="forgot-pw">Forgot password?</a>
-                    <p>Don’t have an account?<a href="#">Sign up</a></p>
+                    <p>Don’t have an account?<a href="/register">Sign up</a></p>
 
                 </div>
               </form>
