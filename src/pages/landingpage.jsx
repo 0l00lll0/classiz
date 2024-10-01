@@ -1,75 +1,76 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../component/header';
 import '../css/landingpage.css'; 
 import homeImage from '../assets/home.webp'; 
 import aboutImage from '../assets/search.webp'; 
 import contactImage from '../assets/contact.webp'; 
 
-import boyImage from '../assets/boy-dynamic-gradient.webp';
-import folderImage from '../assets/folder-dynamic-gradient.webp';
-import tickImage from '../assets/tick-dynamic-gradient.webp';
-import Footer from '../component/footer';
-
 const LandingPage = () => {
   return (
     <div>
       <Header />
-      <section id="home" className="container-fluid section">
-        <div className="row h-100">
-          <div className="col-md-6 d-flex flex-column justify-content-center">
-            <a className="navbar-brand classiz" href="#home">
+      
+      {/* Home Section */}
+      <section id="home" className="home-section container">
+        <div className="row">
+          <div className="col-12 col-md-6">
+          <a className="navbar-brand classiz" href="#home">
               class<span style={{ color: '#BA68C8' }}>iz.</span>
             </a>
             <p className="lead mt-3">Ever thought of creating your own world of quizzes? At classiz,<span> we turn your imagination to reality!</span></p>
             <div className="gradient-line my-3"></div>
             <p className='second-text'>Whether you’re an educator aiming to gauge your students’ progress, or just a trivia buff who loves challenging others, classiz is the place for you!</p>
+
           </div>
-          <div className="col-md-6 d-flex align-items-center justify-content-center img">
+          <div className="col-12 col-md-6">
             <img src={homeImage} alt="Home" className="img-fluid" />
           </div>
         </div>
       </section>
-
-
-        <section id="about" className="container mt-5 about-section">
-          <div className="row">
-            <div className="col-md-6 d-flex align-items-center justify-content-center img">
-              <img src={aboutImage} alt="Home" className="img-fluid" />
-            </div>
-            <div className="col-md-6 d-flex flex-column justify-content-center">
-              <div className="gradient-line my-3"></div>
+      
+      {/* About Section */}
+      <section id="about" className="about-section container">
+      <div className="row">
+          <div className="col-12 col-md-6">
+          <img src={aboutImage} alt="Home" className="img-fluid" />
+          </div>
+          <div className="col-12 col-md-6">
+              <div className="gradient-line my-3"></div>     
               <h1 className="navbar-brand about-start">Get started!</h1>
               <p className="lead mt-3">Want to experience the thrill of knowledge? Create engaging quizzes, gain insights, and embark on this knowledge journey with us? Dive right in!</p>
               <div className="d-flex mt-3">
                 <a href="/register-instructor" className="btn btn-primary me-2">Register as Instructor</a>
                 <a href="/register-student" className="btn btn-primary">Register as Student</a>
               </div>
-            </div>
-          </div>
 
-        <div className="full-width">
-          <div className="row">
-            
-            <div>
-            <div className="gradient-classiz my-3"></div>
-
-              <h1 className="why-classiz" href="#home">
+         </div>
+        </div>
+        
+        
+        <div className="row">
+          <div className="col-12">
+          <div className="gradient-classiz my-3"></div>
+          <h1 className="why-classiz" href="#home">
                 why class<span style={{ color: '#BA68C8' }}>iz</span>?
               </h1>
-            </div>
-            <div className="col-md-6">
-              <div className="container-1">
+
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-12 col-md-6">
+          <div className="container-1">
                 <p>At classiz, we believe in learning with fun. Our dynamic quiz framework not only feeds your curiosity but also helps you track your growth over time.</p>
               </div>
-            </div>
-            <div className="col-md-6">
-              <div className="container-2">
+          </div>
+          <div className="col-12 col-md-6">
+           <div className="container-2">
                 <p>Our course creators handpick each question, making sure you tackle real-world problems and keep your grey cells active!</p>
               </div>
-            </div>
           </div>
+        </div>
 
-         <div className="full-width-container">
+        <div className="row">
+          <div className="col-12">
           <div className="c1">
             <div className="content-row">
               {/* <img src={tickImage} alt="Tick Dynamic Gradient" className="dynamic-image" /> */}
@@ -98,15 +99,16 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
+          </div>
         </div>
-        </div>
-        </section>
+      </section>
+      
+      {/* Contact Section */}
+      <section id="contact" className="contact-section container">
+        <div className="row">
 
-
-        <section id="contact" className="container mt-5 section">
-          <div className="row h-100">
-            <div className="col-md-6 right-contact">
-            <div className="gradient-contact my-3"></div>
+          <div className="col-12 col-md-6">
+              <div className="gradient-contact my-3"></div>
 
               <h1>Contact Us</h1>
               <p> Feel free to message us!</p>
@@ -125,10 +127,15 @@ const LandingPage = () => {
                 </div>
                 <button type="submit" className="btn btn-primary">Send Message</button>
               </form>    
-            </div>
-            <div className="col-md-6 d-flex align-items-center img">
-              <img src={contactImage} alt="Contact" className="img-fluid" />
-            </div>
+
+          </div>
+
+
+          <div className="col-12 col-md-6">
+            <img src={contactImage} alt="Contact" className="img-fluid" />
+          </div>
+        </div>
+        
            
             <div className="social-icons mt-4">
               <a href="" target="_blank" rel="noopener noreferrer" className="me-3">
@@ -141,11 +148,8 @@ const LandingPage = () => {
                 <i className="fab fa-twitter"></i>
               </a>
             </div>
-          </div>
-         
-        </section>
 
-        {/* <Footer /> */}
+      </section>
     </div>
   );
 }
