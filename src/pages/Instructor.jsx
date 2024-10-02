@@ -1,3 +1,4 @@
+// src/pages/Instructor.jsx
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,6 +13,15 @@ import examsIcon from '@iconify/icons-healthicons/i-exam-multiple-choice';
 import logoutIcon from '@iconify/icons-fluent/person-12-filled';
 import helpIcon from '@iconify/icons-fluent/settings-24-filled';
 import searchIcon from '@iconify/icons-material-symbols/search';
+
+import Home from './instructor/Home';
+import Classes from './instructor/Classes';
+import CreateClass from './instructor/CreateClass';
+import CreateActivity from './instructor/CreateActivity';
+import Quizzes from './instructor/Quizzes';
+import Exams from './instructor/Exams';
+import Logout from './instructor/Logout';
+import HelpSupport from './instructor/HelpSupport';
 
 // Sidebar Component
 const Sidebar = ({ setContent }) => {
@@ -114,7 +124,26 @@ Sidebar.propTypes = {
 
 // Content Component
 const Content = ({ content }) => {
-  return <div className="content p-3">{content}</div>;
+  switch(content) {
+    case "Home":
+      return <Home />;
+    case "Classes":
+      return <Classes />;
+    case "Create Class":
+      return <CreateClass />;
+    case "Create Activity":
+      return <CreateActivity />;
+    case "Quizzes":
+      return <Quizzes />;
+    case "Exams":
+      return <Exams />;
+    case "Logout":
+      return <Logout />;
+    case "Help & Support":
+      return <HelpSupport />;
+    default:
+      return <div>{content}</div>;
+  }
 };
 
 // PropTypes for Content
