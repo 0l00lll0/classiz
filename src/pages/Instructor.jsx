@@ -45,7 +45,7 @@ const Sidebar = ({ setContent }) => {
         </li>
         <li className="nav-item">
           <a href="#" className="nav-link" onClick={() => setContent("Classes")}>
-            <Icon icon={classesIcon} /> Manage Classes
+            <Icon icon={classesIcon} /> Classes
           </a>
         </li>
         <li className="nav-item">
@@ -78,12 +78,12 @@ const Sidebar = ({ setContent }) => {
         </li>
         <li className="nav-item">
           <a href="#" className="nav-link" onClick={() => setContent("Quizzes")}>
-            <Icon icon={quizzesIcon} /> Manage Quizzes
+            <Icon icon={quizzesIcon} /> Quizzes
           </a>
         </li>
         <li className="nav-item">
           <a href="#" className="nav-link" onClick={() => setContent("Exams")}>
-            <Icon icon={examsIcon} /> Manage Exams
+            <Icon icon={examsIcon} />  Exams
           </a>
         </li>
         {/* User Section */}
@@ -123,14 +123,14 @@ Sidebar.propTypes = {
 };
 
 // Content Component
-const Content = ({ content }) => {
+const Content = ({ content, classes, addClass }) => {
   switch(content) {
     case "Home":
       return <Home />;
     case "Classes":
-      return <Classes />;
+      return <Classes classes={classes} />;
     case "Create Class":
-      return <CreateClass />;
+      return <CreateClass addClass={addClass} />;
     case "Create Activity":
       return <CreateActivity />;
     case "Quizzes":
@@ -149,16 +149,23 @@ const Content = ({ content }) => {
 // PropTypes for Content
 Content.propTypes = {
   content: PropTypes.string.isRequired,
+  classes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  addClass: PropTypes.func.isRequired,
 };
 
 // Main App Component
 const App = () => {
   const [content, setContent] = useState("Home");
+  const [classes, setClasses] = useState([]);
+
+  const addClass = (newClass) => {
+    setClasses([...classes, newClass]);
+  };
 
   return (
     <div className="d-flex">
       <Sidebar setContent={setContent} />
-      <Content content={content} />
+      <Content content={content} classes={classes} addClass={addClass} />
     </div>
   );
 };
