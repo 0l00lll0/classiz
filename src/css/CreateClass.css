@@ -3,10 +3,10 @@
 #create-class .create-class-container {
   width: 800px;
   padding: 0 30px 30px;
-  height: 75vh;
+  height: 85vh;
   border: 1px solid #DA88F9;
   border-radius: 25px;
-  margin: 0 28%;
+  margin: -35px 28%;
   background-color: #3C2A5D;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
 #create-class .form-control {
   width: 95%;
   padding: 10px;
-  margin: 2% 20px;
+  margin: 1.5% 20px;
   border: 1px solid #DA88F9;
   border-radius: 15px;
   box-sizing: border-box;
@@ -34,7 +34,8 @@
 
 #create-class h1 {
   text-align: start;
-  margin: 50px  30%;
+  margin: 40px  30%;
+  padding: 0 0 10px;
   width: 100%;
   font-weight: 700;
   font-size: 25px;

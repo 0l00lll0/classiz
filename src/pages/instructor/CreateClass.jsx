@@ -8,25 +8,29 @@ const CreateClass = ({ addClass }) => {
   const [className, setClassName] = useState('');
   const [classDescription, setClassDescription] = useState('');
   const [classType, setClassType] = useState('private');
+  const [additionalInfo, setAdditionalInfo] = useState(''); // New state variable
 
-  const handleAddClass = () => {
-    if (className.trim() !== '' && classDescription.trim() !== '') {
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevents default form submission behavior
+    if (e.target.checkValidity()) {
       const newClass = {
         name: className,
         description: classDescription,
         type: classType,
+        additionalInfo, // Include the new field in the class object
       };
       addClass(newClass);
       setClassName('');
       setClassDescription('');
       setClassType('private');
+      setAdditionalInfo(''); // Reset the new field
     }
   };
 
   return (
     <div id='create-class'>
       <h1>Fill up the form to create a class.</h1>
-      <div className="create-class-container">
+      <form onSubmit={handleSubmit} className="create-class-container" noValidate>
         <div className="form-group">
           <label htmlFor="className">Class Name</label>
           <input
@@ -36,6 +40,7 @@ const CreateClass = ({ addClass }) => {
             onChange={(e) => setClassName(e.target.value)}
             placeholder="Enter class name"
             className="form-control"
+            required
           />
         </div>
         <div className="form-group">
@@ -46,12 +51,12 @@ const CreateClass = ({ addClass }) => {
             onChange={(e) => setClassDescription(e.target.value)}
             placeholder="Enter class description"
             className="form-control"
+            required
           />
         </div>
         <div className="form-group">
           <label>Class Type</label>
           <div className="btn-group">
-           
             <button
               type="button"
               className={`btn ${classType === 'private' ? 'btn-primary' : 'btn-outline-primary'}`}
@@ -76,8 +81,19 @@ const CreateClass = ({ addClass }) => {
             </button>
           </div>
         </div>
-        <button onClick={handleAddClass} className="center-btn">Add Class</button>
-      </div>
+        <div className="form-group">
+          <label htmlFor="additionalInfo">Type a name or email that you want to add to this class</label>
+          <input
+            type="text"
+            id="additionalInfo"
+            value={additionalInfo}
+            onChange={(e) => setAdditionalInfo(e.target.value)}
+            placeholder="Enter name or email"
+            className="form-control"
+          />
+        </div>
+        <button type="submit" className="center-btn">Add Class</button>
+      </form>
     </div>
   );
 };
