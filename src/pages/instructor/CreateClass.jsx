@@ -8,22 +8,22 @@ const CreateClass = ({ addClass }) => {
   const [className, setClassName] = useState('');
   const [classDescription, setClassDescription] = useState('');
   const [classType, setClassType] = useState('private');
-  const [additionalInfo, setAdditionalInfo] = useState(''); // New state variable
+  const [additionalInfo, setAdditionalInfo] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevents default form submission behavior
+    e.preventDefault(); 
     if (e.target.checkValidity()) {
       const newClass = {
         name: className,
         description: classDescription,
         type: classType,
-        additionalInfo, // Include the new field in the class object
+        additionalInfo, 
       };
       addClass(newClass);
       setClassName('');
       setClassDescription('');
       setClassType('private');
-      setAdditionalInfo(''); // Reset the new field
+      setAdditionalInfo(''); 
     }
   };
 
