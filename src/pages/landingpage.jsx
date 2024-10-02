@@ -13,7 +13,7 @@ const LandingPage = () => {
       <section id="home" className="home-section container">
         <div className="row">
           <div className="col-12 col-md-6">
-          <a className="navbar-brand classiz" href="#home">
+          <a className="navbar-brand classiz" href="/">
               class<span style={{ color: '#BA68C8' }}>iz.</span>
             </a>
             <p className="lead mt-3">Ever thought of creating your own world of quizzes? At classiz,<span> we turn your imagination to reality!</span></p>

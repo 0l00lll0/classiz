@@ -69,10 +69,14 @@
     color: #ffffff;
 }
 
-input::placeholder {
-    color: white;
-}
-
+#register ::placeholder {
+    color:#BA68C8;
+    opacity: 1; /* Firefox */
+  }
+  
+ #register ::-ms-input-placeholder { /* Edge 12 -18 */
+    color: #BA68C8;
+  }
 #register .btn-primary {
     cursor: pointer;
     border: none;

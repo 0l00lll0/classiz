@@ -1,0 +1,73 @@
+
+
+/* Content styling */
+.content {
+  padding: 1rem;
+  width: 83%;
+  border: 1px solid #ea11c2;
+}
+
+
+.sidebar {
+  width: 280px;
+  height: 100vh;
+}
+#sidebar .navbar-brand.classiz {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.nav-header {
+  font-weight:lighter;
+  margin:  4% 50px 5% 10%;
+  text-align: start;
+  color: #BA68C8 !important;
+
+}
+
+
+
+
+.nav-item {
+  margin: 0;
+}
+#sidebar .nav-item a {
+    margin: 0;
+    color: #e01010;
+
+  }
+#sidebar .nav-item .nav-link, #sidebar .form-control {
+    color: #BA68C8 !important;
+    padding: 0.5rem;
+    border-radius:2rem;
+    margin: 8px;
+    border: 1px solid #7E57C2;
+    width: 90%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#sidebar .nav-item .nav-link:hover {
+  background-color: #7E57C2;
+  color: #ffffff !important;
+}
+
+#sidebar .nav-item .nav-link.active{
+  background-color:#7E57C2;
+  color: #fff  !important;
+}
+
+
+.form-check-input:checked {
+    background-color: #7E57C2;
+    border-color: #7E57C2;
+}
+.form-check-label {
+  
+    color: #BA76C5!important;
+
+}
+  .form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(126, 87, 194, 0.25);
+  }
+
