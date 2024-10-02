@@ -11,6 +11,7 @@
 .sidebar {
   width: 280px;
   height: 100vh;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
 }
 #sidebar .navbar-brand.classiz {
   font-size: 2.2rem;

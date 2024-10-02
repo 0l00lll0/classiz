@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../../css/CreateClass.css';
+import publicIcon from '../../assets/chat-text-dynamic-gradient.svg';
+import privateIcon from '../../assets/lock-dynamic-gradient.svg';
 
 const CreateClass = ({ addClass }) => {
   const [className, setClassName] = useState('');
@@ -26,7 +28,7 @@ const CreateClass = ({ addClass }) => {
       <h1>Fill up the form to create a class.</h1>
       <div className="create-class-container">
         <div className="form-group">
-          <label htmlFor="className">Classname</label>
+          <label htmlFor="className">Class Name</label>
           <input
             type="text"
             id="className"
@@ -37,7 +39,7 @@ const CreateClass = ({ addClass }) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="classDescription">Let people know what this class is all about</label>
+          <label htmlFor="classDescription">Class Description</label>
           <textarea
             id="classDescription"
             value={classDescription}
@@ -47,25 +49,34 @@ const CreateClass = ({ addClass }) => {
           />
         </div>
         <div className="form-group">
-          <label>What kind of class will this be</label>
+          <label>Class Type</label>
           <div className="btn-group">
-            <button
-              type="button"
-              className={`btn ${classType === 'public' ? 'btn-primary' : 'btn-outline-primary'}`}
-              onClick={() => setClassType('public')}
-            >
-              Public
-            </button>
+           
             <button
               type="button"
               className={`btn ${classType === 'private' ? 'btn-primary' : 'btn-outline-primary'}`}
               onClick={() => setClassType('private')}
             >
-              Private
+              <img src={privateIcon} alt="Private Icon" className="btn-icon" />
+              <div className="btn-text">
+                Private
+                <span className="btn-subtext">People need permission to join</span>
+              </div>
+            </button>
+            <button
+              type="button"
+              className={`btn ${classType === 'public' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => setClassType('public')}
+            >
+              <img src={publicIcon} alt="Public Icon" className="btn-icon" />
+              <div className="btn-text">
+                Public
+                <span className="btn-subtext">Anyone can join</span>
+              </div>
             </button>
           </div>
         </div>
-        <button onClick={handleAddClass} className="btn btn-primary">Add Class</button>
+        <button onClick={handleAddClass} className="center-btn">Add Class</button>
       </div>
     </div>
   );
