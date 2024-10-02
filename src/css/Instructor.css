@@ -13,14 +13,14 @@
   height: 100vh;
 }
 #sidebar .navbar-brand.classiz {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .nav-header {
   font-weight:lighter;
-  margin:  4% 50px 5% 10%;
+  margin:  4% 50px 12% 8%;
   text-align: start;
   color: #BA68C8 !important;
 
@@ -28,22 +28,13 @@
 
 
 
-
-.nav-item {
-  margin: 0;
-}
-#sidebar .nav-item a {
-    margin: 0;
-    color: #e01010;
-
-  }
 #sidebar .nav-item .nav-link, #sidebar .form-control {
     color: #BA68C8 !important;
-    padding: 0.5rem;
+    padding: 0.3rem;
     border-radius:2rem;
-    margin: 8px;
+    margin: 0 8px;
     border: 1px solid #7E57C2;
-    width: 90%;
+    width: 80%;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -62,12 +53,37 @@
     background-color: #7E57C2;
     border-color: #7E57C2;
 }
-.form-check-label {
-  
-    color: #BA76C5!important;
+  .form-check-label {
+  color: #BA76C5!important;
+  font-size: 13px;
+  padding: 0;
 
 }
   .form-check-input:focus {
     box-shadow: 0 0 0 0.25rem rgba(126, 87, 194, 0.25);
   }
+  .form-check{
+    margin: -10px 0 10px 10px;
+  }
+  
+  /* icons */
 
+    .input-group-text {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #BA68C8;
+  }
+  
+  .input-group {
+    position: relative;
+    width: 87%;
+  }
+  
+  .input-group input {
+    padding-right: 30px; 
+  }

@@ -2,6 +2,17 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Instructor.css'; 
+import { Icon } from '@iconify/react';
+import homeIcon from '@iconify/icons-heroicons/home-solid';
+import classesIcon from '@iconify/icons-icomoon-free/books';
+import createClassIcon from '@iconify/icons-ic/baseline-create-new-folder';
+import createActivityIcon from '@iconify/icons-mdi/pencil-plus';
+import quizzesIcon from '@iconify/icons-material-symbols/library-books';
+import examsIcon from '@iconify/icons-healthicons/i-exam-multiple-choice';
+import logoutIcon from '@iconify/icons-fluent/person-12-filled';
+import helpIcon from '@iconify/icons-fluent/settings-24-filled';
+import searchIcon from '@iconify/icons-material-symbols/search';
+
 // Sidebar Component
 const Sidebar = ({ setContent }) => {
   const [isLinkedToClass, setIsLinkedToClass] = useState(false);
@@ -18,19 +29,26 @@ const Sidebar = ({ setContent }) => {
           <h6 className="nav-header">Menu</h6>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link active" onClick={() => setContent("Home")}>Home</a>
+          <a href="#" className="nav-link active" onClick={() => setContent("Home")}>
+            <Icon icon={homeIcon} /> Home
+          </a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link" onClick={() => setContent("Classes")}>Manage Classes</a>
+          <a href="#" className="nav-link" onClick={() => setContent("Classes")}>
+            <Icon icon={classesIcon} /> Manage Classes
+          </a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link" onClick={() => setContent("Create Class")}>Create Class</a>
+          <a href="#" className="nav-link" onClick={() => setContent("Create Class")}>
+            <Icon icon={createClassIcon} /> Create Class
+          </a>
         </li>
-
         <li className="nav-item">
-          <a href="#" className="nav-link" onClick={() => setContent("Create Activity")}>Create Activity</a>
+          <a href="#" className="nav-link" onClick={() => setContent("Create Activity")}>
+            <Icon icon={createActivityIcon} /> Create Activity
+          </a>
         </li>
-             <li className="nav-item">
+        <li className="nav-item">
           <div className="form-check form-switch">
             <input
               type="checkbox"
@@ -49,30 +67,42 @@ const Sidebar = ({ setContent }) => {
           <h6 className="nav-header">Assessment</h6>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link" onClick={() => setContent("Quizzes")}>Manage Quizzes</a>
+          <a href="#" className="nav-link" onClick={() => setContent("Quizzes")}>
+            <Icon icon={quizzesIcon} /> Manage Quizzes
+          </a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link" onClick={() => setContent("Exams")}>Manage Exams</a>
+          <a href="#" className="nav-link" onClick={() => setContent("Exams")}>
+            <Icon icon={examsIcon} /> Manage Exams
+          </a>
         </li>
-
         {/* User Section */}
         <li className="nav-item">
           <h6 className="nav-header">User</h6>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link" onClick={() => setContent("Logout")}>Logout</a>
+          <a href="#" className="nav-link" onClick={() => setContent("Logout")}>
+            <Icon icon={logoutIcon} /> Logout
+          </a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link" onClick={() => setContent("Help & Support")}>Help & Support</a>
+          <a href="#" className="nav-link" onClick={() => setContent("Help & Support")}>
+            <Icon icon={helpIcon} /> Help & Support
+          </a>
         </li>
       </ul>
 
-     <input 
-      type="text" 
-      placeholder="Search..." 
-      className="form-control mb-3" 
-      onChange={(e) => setContent(`Search Results for "${e.target.value}"`)} 
-    />
+      <div className="input-group mb-3">
+        <input 
+          type="text" 
+          placeholder="   Search" 
+          className="form-control" 
+          onChange={(e) => setContent(`Search Results for "${e.target.value}"`)} 
+        />
+        <span className="input-group-text">
+          <Icon icon={searchIcon} />
+        </span>
+      </div>
     </div>
   );
 };
