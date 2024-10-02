@@ -38,8 +38,8 @@ const LandingPage = () => {
               <h1 className="navbar-brand about-start">Get started!</h1>
               <p className="lead mt-3">Want to experience the thrill of knowledge? Create engaging quizzes, gain insights, and embark on this knowledge journey with us? Dive right in!</p>
               <div className="d-flex mt-3">
-                <a href="/register-instructor" className="btn btn-primary me-2">Register as Instructor</a>
-                <a href="/register-student" className="btn btn-primary">Register as Student</a>
+                 <a href="/register?role=instructor" className="btn btn-primary me-2">Register as Instructor</a>
+                <a href="/register?role=student" className="btn btn-primary">Register as Student</a>
               </div>
 
          </div>

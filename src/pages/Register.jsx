@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../component/header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Register.css';
 import loginImage from '../assets/loginreg.webp';
 
 const Register = () => {
+  const [role, setRole] = useState('');
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const roleParam = queryParams.get('role');
+    if (roleParam) {
+      setRole(roleParam);
+    }
+  }, []);
+
   return (
     <div>
       <Header />
@@ -24,8 +34,8 @@ const Register = () => {
               <form>
                 <div className="form-group">
                   <label htmlFor="role">Role</label>
-                  <select className="form-control" id="role" name="role" required>
-                    <option value="" placeholder="Select your role" >Select your role</option>
+                  <select className="form-control" id="role" name="role" value={role} onChange={(e) => setRole(e.target.value)} required>
+                    <option value="" placeholder="Select your role">Select your role</option>
                     <optgroup label="Roles">
                       <option value="student">Student</option>
                       <option value="instructor">Instructor</option>
