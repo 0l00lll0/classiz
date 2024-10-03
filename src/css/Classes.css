@@ -1,7 +1,25 @@
+/* General styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 
+#classes .classlist-card {
+    /* justify-content: center; */
+    display: flex;
+    padding: 0.5rem 0 0 2rem;
+    align-items: left; 
+    border: solid 1px transparent;
+    border-radius: 10px;
+    height:4rem;
+    
+  }
+  
 
-.grid {
+  #classes .welcome-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: hsl(0, 0%, 10%);
+  }
+  .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
@@ -9,7 +27,13 @@
   }
   
   .card {
-    position: relative; 
+    width: 240px; /* Set a fixed width for the card */
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
   }
   
   .card-image-container {
