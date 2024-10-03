@@ -114,7 +114,7 @@ Sidebar.propTypes = {
 const Content = ({ content, classes, addClass }) => {
   switch(content) {
     case "Home":
-      return <Home />;
+      return <Home classes={classes} onCardClick={(classItem) => console.log(classItem)} />;
     case "Classes":
       return <Classes classes={classes} />;
     case "Create Class":
@@ -136,7 +136,13 @@ const Content = ({ content, classes, addClass }) => {
 
 Content.propTypes = {
   content: PropTypes.string.isRequired,
-  classes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  classes: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      enrollment: PropTypes.number.isRequired,
+    })
+  ).isRequired,
   addClass: PropTypes.func.isRequired,
 };
 

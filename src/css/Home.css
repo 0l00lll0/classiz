@@ -1,11 +1,12 @@
 /* General styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-body {
+#home body {
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
     background-color: hsl(0, 0%, 100%);
+    overflow-y: hidden !important;
   }
   
   .container {
@@ -24,7 +25,7 @@ body {
     padding: 20px;
   }
 
-  .main-card {
+#home  .main-card {
     /* justify-content: center; */
     display: flex;
     padding-left: 5rem;
@@ -43,7 +44,9 @@ body {
     font-weight: bold;
     color: hsl(0, 0%, 100%);
   }
-  
+  .welcome-title .name {
+    margin-right: 70%;   
+}
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -99,4 +102,19 @@ body {
   .card:hover {
     transform: scale(1.05); 
   }
+  /* See more button styling */
+.see-more-btn {
+    background-color:hsl(262, 47%, 55%);;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 50px 88% 0 0;
+    transition: background-color 0.2s;
+  }
   
+  .see-more-btn:hover {
+    background-color: hsl(262, 47%, 55%);;
+  }
