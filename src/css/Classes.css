@@ -1,9 +1,7 @@
-/* General styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 
 #classes .classlist-card {
-    /* justify-content: center; */
     display: flex;
     padding: 0.5rem 0 0 2rem;
     align-items: left; 

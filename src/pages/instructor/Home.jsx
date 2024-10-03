@@ -9,7 +9,7 @@ const Home = ({ classes = [], onCardClick, setContent }) => {
   const navigate = useNavigate();
 
   return (
-    <div id='home' className="container">
+    <div id='home-user' className="container">
       <main className="main-content">
         <div className="main-card">
           <h2 className="welcome-title">

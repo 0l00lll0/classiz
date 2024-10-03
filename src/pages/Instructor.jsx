@@ -144,7 +144,7 @@ Content.propTypes = {
     })
   ).isRequired,
   addClass: PropTypes.func.isRequired,
-  setContent: PropTypes.func.isRequired, 
+  setContent: PropTypes.func.isRequired,  
 };
 
 const App = () => {
