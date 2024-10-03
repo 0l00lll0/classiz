@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  background-color: hsl(0, 0%, 100%);
+  overflow-x:hidden;
+ 
+}
 
 #create-class .create-class-container {
   width: 800px;
@@ -6,7 +13,7 @@
   height: 85vh;
   border: 1px solid #DA88F9;
   border-radius: 25px;
-  margin: -35px 28%;
+  margin: -6% 25%;
   background-color: #3C2A5D;
   display: flex;
   flex-direction: column;
@@ -34,7 +41,7 @@
 
 #create-class h1 {
   text-align: start;
-  margin: 40px  30%;
+  margin: 0 0 6% 27%;
   padding: 0 0 10px;
   width: 100%;
   font-weight: 700;

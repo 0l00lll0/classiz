@@ -1,4 +1,3 @@
-// src/pages/Instructor.jsx
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -34,10 +33,7 @@ const Sidebar = ({ setContent }) => {
       </p>
       
       <ul className="nav nav-pills flex-column mb-auto">
-        {/* Menu */}
-        <li className="nav-item">
-          <h6 className="nav-header">Menu</h6>
-        </li>
+        <li className="nav-item"><h6 className="nav-header">Menu</h6></li>
         <li className="nav-item">
           <a href="#" className="nav-link active" onClick={() => setContent("Home")}>
             <Icon icon={homeIcon} /> Home
@@ -72,10 +68,7 @@ const Sidebar = ({ setContent }) => {
             </label>
           </div>
         </li>
-        {/* Assessment Section */}
-        <li className="nav-item">
-          <h6 className="nav-header">Assessment</h6>
-        </li>
+        <li className="nav-item"><h6 className="nav-header">Assessment</h6></li>
         <li className="nav-item">
           <a href="#" className="nav-link" onClick={() => setContent("Quizzes")}>
             <Icon icon={quizzesIcon} /> Quizzes
@@ -83,13 +76,10 @@ const Sidebar = ({ setContent }) => {
         </li>
         <li className="nav-item">
           <a href="#" className="nav-link" onClick={() => setContent("Exams")}>
-            <Icon icon={examsIcon} />  Exams
+            <Icon icon={examsIcon} /> Exams
           </a>
         </li>
-        {/* User Section */}
-        <li className="nav-item">
-          <h6 className="nav-header">User</h6>
-        </li>
+        <li className="nav-item"><h6 className="nav-header">User</h6></li>
         <li className="nav-item">
           <a href="#" className="nav-link" onClick={() => setContent("Logout")}>
             <Icon icon={logoutIcon} /> Logout
@@ -117,12 +107,10 @@ const Sidebar = ({ setContent }) => {
   );
 };
 
-// PropTypes for Sidebar
 Sidebar.propTypes = {
   setContent: PropTypes.func.isRequired,
 };
 
-// Content Component
 const Content = ({ content, classes, addClass }) => {
   switch(content) {
     case "Home":
@@ -146,14 +134,12 @@ const Content = ({ content, classes, addClass }) => {
   }
 };
 
-// PropTypes for Content
 Content.propTypes = {
   content: PropTypes.string.isRequired,
   classes: PropTypes.arrayOf(PropTypes.string).isRequired,
   addClass: PropTypes.func.isRequired,
 };
 
-// Main App Component
 const App = () => {
   const [content, setContent] = useState("Home");
   const [classes, setClasses] = useState([]);
@@ -163,9 +149,11 @@ const App = () => {
   };
 
   return (
-    <div className="d-flex">
+    <div className="d-flex" style={{ height: '100vh' }}>
       <Sidebar setContent={setContent} />
-      <Content content={content} classes={classes} addClass={addClass} />
+      <div className="main-content flex-grow-1">
+        <Content content={content} classes={classes} addClass={addClass} />
+      </div>
     </div>
   );
 };
