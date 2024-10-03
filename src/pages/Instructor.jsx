@@ -111,10 +111,10 @@ Sidebar.propTypes = {
   setContent: PropTypes.func.isRequired,
 };
 
-const Content = ({ content, classes, addClass }) => {
+const Content = ({ content, classes, addClass, setContent }) => {
   switch(content) {
     case "Home":
-      return <Home classes={classes} onCardClick={(classItem) => console.log(classItem)} />;
+      return <Home classes={classes} onCardClick={(classItem) => console.log(classItem)} setContent={setContent} />;
     case "Classes":
       return <Classes classes={classes} />;
     case "Create Class":
@@ -144,6 +144,7 @@ Content.propTypes = {
     })
   ).isRequired,
   addClass: PropTypes.func.isRequired,
+  setContent: PropTypes.func.isRequired, 
 };
 
 const App = () => {
@@ -158,7 +159,7 @@ const App = () => {
     <div className="d-flex" style={{ height: '100vh' }}>
       <Sidebar setContent={setContent} />
       <div className="main-content flex-grow-1">
-        <Content content={content} classes={classes} addClass={addClass} />
+        <Content content={content} classes={classes} addClass={addClass} setContent={setContent} />
       </div>
     </div>
   );

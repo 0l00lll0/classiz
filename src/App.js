@@ -4,7 +4,6 @@ import LandingPage from './pages/landingpage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Instructor from './pages/Instructor';
-import Classes from './pages/instructor/Classes'; // Import the Classes component
 
 function App() {
   return (
@@ -14,8 +13,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/instructor" element={<Instructor />} />
-          <Route path="/classes" element={<Classes />} /> {/* Add this line */}
+          <Route path="/instructor" element={<Instructor />} /> 
         </Routes>
       </div>
     </Router>

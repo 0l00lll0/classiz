@@ -1,22 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import personIcon from '../../media/person-icon.svg'; 
-import '../../css/Classes.css'; 
+import personIcon from '../../media/person-icon.svg';
+import '../../css/Classes.css';
 
-const Classes = ({ classes, onCardClick }) => {
+const Classes = ({ classes = [], onCardClick }) => {
   return (
     <div id='classes' className="container">
       <main className="main-content">
-        <div className="classlist-card">
-          <h2 className="welcome-title">Classes</h2>
-        </div>
-
         <div className="grid">
           {classes.map((classItem, index) => (
             <div
               className="card"
               key={index}
-              onClick={() => onCardClick(classItem)} 
+              onClick={() => onCardClick(classItem)}
             >
               <div className="card-content">
                 <h3 className="card-title">{classItem.name}</h3>

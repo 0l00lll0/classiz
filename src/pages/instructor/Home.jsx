@@ -4,14 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import personIcon from '../../media/person-icon.svg';
 import '../../css/Home.css';
 
-const Home = ({ classes = [], onCardClick }) => {
+const Home = ({ classes = [], onCardClick, setContent }) => {
   const [visibleCount, setVisibleCount] = useState(4);
   const navigate = useNavigate();
-
-  const handleSeeMore = (e) => {
-    e.preventDefault();
-    navigate('/classes');
-  };
 
   return (
     <div id='home' className="container">
@@ -46,9 +41,9 @@ const Home = ({ classes = [], onCardClick }) => {
           ))}
         </div>
         {visibleCount < classes.length && (
-          <button className="see-more-btn" onClick={handleSeeMore}>
-            See more
-          </button>
+          <a href="#" className="nav-link see-more-btn" onClick={() => setContent("Classes")}>
+            see more
+          </a>
         )}
       </main>
     </div>
@@ -64,6 +59,7 @@ Home.propTypes = {
     })
   ).isRequired,
   onCardClick: PropTypes.func.isRequired,
+  setContent: PropTypes.func.isRequired, 
 };
 
 export default Home;

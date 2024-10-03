@@ -1,10 +1,9 @@
-/* General styles */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap');
 
 #home body {
   margin: 0;
   padding: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: hsl(0, 0%, 100%);
   overflow-y: hidden !important; 
 }
@@ -25,7 +24,6 @@
   }
 
 #home  .main-card {
-    /* justify-content: center; */
     display: flex;
     padding-left: 5rem;
     align-items: center; 
@@ -101,10 +99,10 @@
   .card:hover {
     transform: scale(1.05); 
   }
-  /* See more button styling */
+  
 .see-more-btn {
     background-color:hsl(262, 47%, 55%);;
-    color: #fff;
+    color: #fff !important;
     border: none;
     border-radius: 8px;
     padding: 10px 20px;
