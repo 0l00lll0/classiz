@@ -21,13 +21,13 @@ import Quizzes from './instructor/Quizzes';
 import Exams from './instructor/Exams';
 import Logout from './instructor/Logout';
 import HelpSupport from './instructor/HelpSupport';
-
+import HeaderSideBar from '../component/HeaderSideBar';
 // Sidebar Component
-const Sidebar = ({ setContent }) => {
+const Sidebar = ({ setContent, isSidebarVisible }) => {
   const [isLinkedToClass, setIsLinkedToClass] = useState(false);
 
   return (
-    <div id="sidebar" className="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar">
+    <div id="sidebar" className={`d-flex flex-column flex-shrink-0 p-3 bg-light sidebar ${isSidebarVisible ? 'visible' : 'hidden'}`}>
       <p className="navbar-brand classiz">
         class<span style={{ color: '#BA68C8' }}>iz.</span>
       </p>
@@ -109,6 +109,7 @@ const Sidebar = ({ setContent }) => {
 
 Sidebar.propTypes = {
   setContent: PropTypes.func.isRequired,
+  isSidebarVisible: PropTypes.bool.isRequired,
 };
 
 const Content = ({ content, classes, addClass, setContent }) => {
@@ -150,16 +151,24 @@ Content.propTypes = {
 const App = () => {
   const [content, setContent] = useState("Home");
   const [classes, setClasses] = useState([]);
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
   const addClass = (newClass) => {
     setClasses([...classes, newClass]);
   };
 
+  const toggleSidebar = () => {
+    setIsSidebarVisible(!isSidebarVisible);
+  };
+
   return (
-    <div className="d-flex" style={{ height: '100vh' }}>
-      <Sidebar setContent={setContent} />
-      <div className="main-content flex-grow-1">
-        <Content content={content} classes={classes} addClass={addClass} setContent={setContent} />
+    <div className="d-flex flex-column" style={{ height: '100vh' }}>
+      <HeaderSideBar toggleSidebar={toggleSidebar} />
+      <div className="d-flex flex-grow-1">
+        <Sidebar setContent={setContent} isSidebarVisible={isSidebarVisible} />
+        <div className="main-content flex-grow-1">
+          <Content content={content} classes={classes} addClass={addClass} setContent={setContent} />
+        </div>
       </div>
     </div>
   );

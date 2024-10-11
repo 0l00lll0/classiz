@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import personIcon from '../../media/person-icon.svg';
+import personIcon from '../../media/person-icon.svg'; // Ensure this path is correct
 import '../../css/Home.css';
 
 const Home = ({ classes = [], onCardClick, setContent }) => {
