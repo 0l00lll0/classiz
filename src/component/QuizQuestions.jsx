@@ -60,7 +60,7 @@ const handleSubmit = (e) => {
 return (
     <form onSubmit={handleSubmit} id="quiz-form">
 
-        <div className="card">
+        <div className="questions-card">
             <label htmlFor="quiz-title">Provide the quiz title</label>
             <input type="text" id="quiz-title" name="quiz_title" className="input" placeholder="Quiz Title" value={quiz.quiz_title} onChange={handleQuizChange} />
 

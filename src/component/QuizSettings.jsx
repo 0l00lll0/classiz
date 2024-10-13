@@ -42,7 +42,7 @@ const QuizSettings = () => {
   return (
     <div id='quiz-setting'>
 
-      <div className="card">
+      <div className="settings-card">
         <h2 className="section-title">General</h2>
         <div className="input-group">
           <div className="title-wrapper">
@@ -79,6 +79,7 @@ const QuizSettings = () => {
         </div>
         <div className="input-group">
           <label className="Subcategory">Deadline</label>
+          {/* <div className='input-field-dl'></div> */}
           <input
             type="date"
             className="input-field"
@@ -95,6 +96,7 @@ const QuizSettings = () => {
           />
         </div>
         <div className="input-group">
+          
           <div className="title-wrapper">
             <img src={passingIcon} alt="Passing Icon" className="icon" />
             <label className="Category">Passing Score</label>
@@ -107,7 +109,7 @@ const QuizSettings = () => {
             value={passingScore}
             onChange={handleInputChange}
           />
-          <p className="help-text">Set the required score to pass the quiz or exam</p>
+            <p className="help-text">Set the required score to pass the quiz or exam</p>
         </div>
         <div className="input-group">
           <div className="title-wrapper">
@@ -136,7 +138,8 @@ const QuizSettings = () => {
                 checked={options.viewIncorrect}
                 onChange={handleOptionChange}
               />
-              <span className="slider"></span>
+              <div className='slider-pos'>
+              <span className="slider"></span></div>
             </label>
           </div>
 

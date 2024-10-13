@@ -16,7 +16,7 @@
     padding: 20px;
 }
 
-#quiz-form .card, #quiz-form .cardQuestions {
+#quiz-form .questions-card, #quiz-form .cardQuestions {
     background-color: #3C2A5D;
     padding: 20px;
     border-radius: 20px;
@@ -25,6 +25,8 @@
     width: 100%;
     position: relative;
 }
+
+
 
 #quiz-form .option-wrapper {
     display: flex;
@@ -122,4 +124,8 @@
     border-radius: 10px;
     cursor: pointer;
     margin:50px 70px 50px 0;                  
+}
+
+#quiz-form .btn-create:hover {
+    background-color: #9c56a9;
 }
