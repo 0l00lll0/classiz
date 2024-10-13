@@ -159,6 +159,7 @@ const App = () => {
 
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
+    document.body.classList.toggle('no-scroll', !isSidebarVisible);
   };
 
   return (

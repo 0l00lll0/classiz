@@ -118,7 +118,9 @@ body {
   .sidebar.visible {
     transform: translateX(0);
   }
- 
+ .no-scroll {
+  overflow: hidden;
+}
   
   @media (max-width: 768px) {
     .sidebar {
