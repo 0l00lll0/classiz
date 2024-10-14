@@ -23,9 +23,13 @@ const QuizSettings = () => {
     } else if (name in deadline) {
       setDeadline({ ...deadline, [name]: value });
     } else if (name === 'passingScore') {
-      setPassingScore(value);
+      if (value === '' || (Number.isInteger(Number(value)) && Number(value) > 0)) {
+        setPassingScore(value);
+      }
     } else if (name === 'attemptsAllowed') {
-      setAttemptsAllowed(value);
+      if (value === '' || (Number.isInteger(Number(value)) && Number(value) > 0)) {
+        setAttemptsAllowed(value);
+      }
     }
   };
 
@@ -41,7 +45,6 @@ const QuizSettings = () => {
 
   return (
     <div id='quiz-setting'>
-
       <div className="settings-card">
         <h2 className="section-title">General</h2>
         <div className="input-group">
@@ -79,7 +82,6 @@ const QuizSettings = () => {
         </div>
         <div className="input-group">
           <label className="Subcategory">Deadline</label>
-          {/* <div className='input-field-dl'></div> */}
           <input
             type="date"
             className="input-field"
@@ -96,7 +98,6 @@ const QuizSettings = () => {
           />
         </div>
         <div className="input-group">
-          
           <div className="title-wrapper">
             <img src={passingIcon} alt="Passing Icon" className="icon" />
             <label className="Category">Passing Score</label>
@@ -108,8 +109,9 @@ const QuizSettings = () => {
             name="passingScore"
             value={passingScore}
             onChange={handleInputChange}
+            min="1"
           />
-            <p className="help-text">Set the required score to pass the quiz or exam</p>
+          <p className="help-text">Set the required score to pass the quiz or exam</p>
         </div>
         <div className="input-group">
           <div className="title-wrapper">
@@ -123,6 +125,7 @@ const QuizSettings = () => {
             name="attemptsAllowed"
             value={attemptsAllowed}
             onChange={handleInputChange}
+            min="1"
           />
           <p className="help-text">Set the number of attempts each student is allowed to attempt.</p>
         </div>
@@ -138,8 +141,7 @@ const QuizSettings = () => {
                 checked={options.viewIncorrect}
                 onChange={handleOptionChange}
               />
-              <div className='slider-pos'>
-              <span className="slider"></span></div>
+              <span className="slider"></span>
             </label>
           </div>
 

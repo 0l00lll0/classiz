@@ -111,6 +111,7 @@
     justify-content: center; 
     margin: -3% 5%;  
     display: flex;
+
 }
 
 #quiz-form .btn-create {
@@ -128,4 +129,25 @@
 
 #quiz-form .btn-create:hover {
     background-color: #9c56a9;
+}
+
+@media (max-width: 768px) {
+    #quiz-form .questions-card,  #quiz-form .cardQuestions{
+        width: 750px;
+        max-width: 110%;
+    }
+
+    #quiz-form .btn-add {
+        margin: -7% -3%;  
+    }
+    #quiz-form .btn-create {
+   
+        margin:50px 0 50px 50px;                  
+    }
+    
+}
+
+@media (max-width:425px) {
+    #quiz-form .btn-add {
+    }
 }

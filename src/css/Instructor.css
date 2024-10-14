@@ -156,7 +156,7 @@ body {
     #sidebar {
       transform: translateX(0);
     }
-  
+ 
     #burger .btn.btn-primary.d-md-none,
     #burger .menuIcon {
       display: none;

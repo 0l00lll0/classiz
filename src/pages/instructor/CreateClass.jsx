@@ -56,10 +56,10 @@ const CreateClass = ({ addClass }) => {
         </div>
         <div className="form-group">
           <label>Class Type</label>
-          <div className="btn-group">
+                   <div className="btn-group">
             <button
               type="button"
-              className={`btn ${classType === 'private' ? 'btn-primary' : 'btn-outline-primary'}`}
+              className={`btn ${classType === 'private' ? 'btn-primary btn-selected' : 'btn-outline-primary'}`}
               onClick={() => setClassType('private')}
             >
               <img src={privateIcon} alt="Private Icon" className="btn-icon" />
@@ -70,7 +70,7 @@ const CreateClass = ({ addClass }) => {
             </button>
             <button
               type="button"
-              className={`btn ${classType === 'public' ? 'btn-primary' : 'btn-outline-primary'}`}
+              className={`btn ${classType === 'public' ? 'btn-primary btn-selected' : 'btn-outline-primary'}`}
               onClick={() => setClassType('public')}
             >
               <img src={publicIcon} alt="Public Icon" className="btn-icon" />
