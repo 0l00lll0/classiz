@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import personIcon from '../../media/person-icon.svg'; // Ensure this path is correct
+import personIcon from '../../media/person-icon.svg';
 import '../../css/Home.css';
 
 const Home = ({ classes = [], onCardClick, setContent }) => {
   const [visibleCount, setVisibleCount] = useState(4);
   const navigate = useNavigate();
+
+  const getInitials = (name) => {
+    return name.split(' ').map(word => word[0]).join('');
+  };
 
   return (
     <div id='home-user' className="container">
@@ -24,6 +28,9 @@ const Home = ({ classes = [], onCardClick, setContent }) => {
               key={index}
               onClick={() => onCardClick(classItem)}
             >
+              <div className="card-image-container">
+                {getInitials(classItem.name)}
+              </div>
               <div className="card-content">
                 <h3 className="card-title">{classItem.name}</h3>
                 <hr />

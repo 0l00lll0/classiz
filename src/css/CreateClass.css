@@ -155,6 +155,11 @@ body {
 .btn-selected {
   font-size: 1em;
 }
+
+
+
+
+
 @media (max-width: 1024px) {
   #create-class .create-class-container {
     width: 90%;

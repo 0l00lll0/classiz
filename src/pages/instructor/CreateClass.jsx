@@ -56,7 +56,7 @@ const CreateClass = ({ addClass }) => {
         </div>
         <div className="form-group">
           <label>Class Type</label>
-                   <div className="btn-group">
+          <div className="btn-group">
             <button
               type="button"
               className={`btn ${classType === 'private' ? 'btn-primary btn-selected' : 'btn-outline-primary'}`}

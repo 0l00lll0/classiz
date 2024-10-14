@@ -4,6 +4,10 @@ import personIcon from '../../media/person-icon.svg';
 import '../../css/Classes.css';
 
 const Classes = ({ classes = [], onCardClick }) => {
+  const getInitials = (name) => {
+    return name.split(' ').map(word => word[0]).join('');
+  };
+
   return (
     <div id='classes' className="container">
       <main className="main-content">
@@ -14,6 +18,9 @@ const Classes = ({ classes = [], onCardClick }) => {
               key={index}
               onClick={() => onCardClick(classItem)}
             >
+              <div className="card-image-container">
+                {getInitials(classItem.name)}
+              </div>
               <div className="card-content">
                 <h3 className="card-title">{classItem.name}</h3>
                 <hr />

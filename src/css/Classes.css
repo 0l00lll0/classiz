@@ -31,14 +31,24 @@
     cursor: pointer;
 }
 
-.card-image-container {
-    position: absolute; 
+ .card-image-container {
+    font-size: 2em; 
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 25px 25px 0 0; 
+    height: 45%;
+    background-color: hsl(261, 100%, 80%);
+    font-size: 4.5rem;
+    color: #fff;
+    position: absolute;
     top: 0;
-    left: 0; 
-    right: 0; 
-    margin: 0; 
-    padding: 0; 
-}
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+  }
 
 .card-image {
     width: 100%; 
@@ -54,7 +64,7 @@
 }
 
 .card-title {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
 }
 
