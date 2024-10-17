@@ -1,27 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import '../../css/general_content.css';
+import React, { useState } from 'react';
+import '../../css/InstructorQuizzes.css';
 import { FaFilter } from 'react-icons/fa'; 
-const Quizzes = () => {
-    const [quizzes, setQuizzes] = useState([]);
-    const [dropdownVisible, setDropdownVisible] = useState(false);
+import calendarIcon from '../../media/calendar.svg';
+import quizOverviewIcon from '../../media/quiz_overview.svg';
+import studentRecordIcon from '../../media/records.svg';
 
-    // useEffect(() => {
-    //     axios.get('http://localhost:3000/api/')
-    //         .then(response => {
-    //             setQuizzes(response.data);
-    //         })
-    //         .catch(error => {
-    //             console.error('There was an error!', error);
-    //         });
-    // }, []);
+const Quizzes = () => {
+    const [quizzes, setQuizzes] = useState([
+        {
+            quiz_title: "Sample Quiz 1",
+            due_date: "2023-12-31T23:59:59Z",
+            section: "A1"
+        },
+        {
+            quiz_title: "Sample Quiz 2",
+            due_date: "2024-01-15T23:59:59Z",
+            section: "B2"
+        }
+    ]);
+    const [dropdownVisible, setDropdownVisible] = useState(false);
 
     const toggleDropdown = () => {
         setDropdownVisible(!dropdownVisible);
     };
 
     return (
-        <div id='quiz' className="container">
+        <div id='instructor-quiz' className="container">
             <header className="header">
                 <button className="button">Upcoming</button>
                 <button className="button">Incomplete</button>
@@ -44,18 +48,44 @@ const Quizzes = () => {
 
             <div className="quiz-list">
                 {quizzes.map((quiz, index) => (
-                    <div key={index}>
-                        <p className="date">{new Date(quiz.due_date).toLocaleDateString()}</p>
-                        <div className="quiz-card">
-                            <div className="quiz-wrapper">
-                                <div className="details-wrapper">
-                                    <h2 className="quiz-title">{quiz.quiz_title}</h2>
-                                    <hr />
-                                    <div className="date-wrapper">
-                                        <img src="media/calendar.svg" alt="Calendar Icon" className="image icon" />
-                                        <p className="due-date">Due Date: {new Date(quiz.due_date).toLocaleString()}</p>
-                                    </div>
-                                    <p className="course-code">Section: {quiz.section}</p>
+                    <div className="quiz-card" key={index}>
+                        <div className="quiz-wrapper">
+                            <div className="details-wrapper">
+                                <h2 className="quiz-title">{quiz.quiz_title}</h2>
+                                <hr />
+                                <div className="date-wrapper">
+                                    <img src={calendarIcon} alt="Calendar Icon" className="image icon" />
+                                    <p className="due-date">
+                                        Due Date: {new Date(quiz.due_date).toLocaleString('en-US', {
+                                            month: 'long',
+                                            day: 'numeric',
+                                            year: 'numeric',
+                                            hour: 'numeric',
+                                            minute: 'numeric'
+                                        })}
+                                    </p>
+                                </div>
+                                <p className="course-code">Section: {quiz.section}</p>
+                            </div>
+                        </div>
+
+                        <div className="quiz-details">
+                            <div className="quiz-section">
+                                <div className="quiz-image-holder">
+                                    <img src={quizOverviewIcon} alt="Quiz Overview" className="quiz-overview" />
+                                </div>
+                                <div className="description-holder">
+                                     Quiz Overview
+                                    <p className="description">Toggle between Preview Mode to view the quiz and Edit Mode to modify questions and settings in the same tab.</p>
+                                </div>
+                            </div>
+                            <div className="quiz-section">
+                                <div className="quiz-image-holder">
+                                    <img src={studentRecordIcon} alt="Student Record" className="student-record" />
+                                </div>
+                                <div className="description-holder">
+                                    Student Records
+                                    <p className="description">Displays overall scores, and performance analytics for the selected quiz.</p>
                                 </div>
                             </div>
                         </div>
