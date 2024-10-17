@@ -49,11 +49,11 @@ const Sidebar = ({ setContent, isSidebarVisible }) => {
             <Icon icon={createClassIcon} /> Create Class
           </a>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <a href="#" className="nav-link" onClick={() => setContent("Create Activity")}>
             <Icon icon={createActivityIcon} /> Create Activity
           </a>
-        </li>
+        </li> */}
         <li className="nav-item">
           <div className="form-check form-switch">
             <input

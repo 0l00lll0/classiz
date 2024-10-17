@@ -57,6 +57,17 @@
 
 
 
+ .card-title, 
+.card-description{
+  font-size: 15px;
+  font-weight: bold;
+  text-align: start;
+}
+
+.card-description{
+  font-weight:normal;
+}
+
 #home-user .card-image {
   width: 100%; 
   height: 50%; 

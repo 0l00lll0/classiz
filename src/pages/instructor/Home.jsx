@@ -34,7 +34,7 @@ const Home = ({ classes = [], onCardClick, setContent }) => {
               <div className="card-content">
                 <h3 className="card-title">{classItem.name}</h3>
                 <hr />
-                <p>{classItem.description}</p>
+                <p className='card-description'>{classItem.description}</p>
                 <p className="card-text">
                   <img
                     src={personIcon}
