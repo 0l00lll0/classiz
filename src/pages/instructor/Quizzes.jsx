@@ -21,7 +21,7 @@ const Quizzes = () => {
     };
 
     return (
-        <div className="container">
+        <div id='quiz' className="container">
             <header className="header">
                 <button className="button">Upcoming</button>
                 <button className="button">Incomplete</button>
