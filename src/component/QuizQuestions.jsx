@@ -1,24 +1,11 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import '../css/questions_style.css';
 import addIcon from './../media/add.svg';
 
-const QuizQuestions = () => {
-    const [quiz, setQuiz] = useState({
-        quiz_title: '',
-        quiz_desc: '',
-        quiz_instructions: '',
-        questions: [
-            {
-                question: '',
-                choices: ['', '', '', ''],
-                correct_answer: '',
-                points: ''
-            }
-        ]
-    });
-
+const QuizQuestions = ({ quiz, setQuiz }) => {
     const navigate = useNavigate();
 
     const handleChange = (e, index, choiceIndex) => {
@@ -63,7 +50,6 @@ const QuizQuestions = () => {
 
     return (
         <form onSubmit={handleSubmit} id="quiz-form">
-
             <div className="questions-card">
                 <label htmlFor="quiz-title">Provide the quiz title</label>
                 <input type="text" id="quiz-title" name="quiz_title" className="input" placeholder="Quiz Title" value={quiz.quiz_title} onChange={handleQuizChange} />
@@ -105,6 +91,11 @@ const QuizQuestions = () => {
             <button type="submit" className="btn-create">Create</button>
         </form>
     );
+};
+
+QuizQuestions.propTypes = {
+  quiz: PropTypes.object.isRequired,
+  setQuiz: PropTypes.func.isRequired,
 };
 
 export default QuizQuestions;
