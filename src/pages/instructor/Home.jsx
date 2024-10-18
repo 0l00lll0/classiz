@@ -13,7 +13,7 @@ const Home = ({ classes = [], onCardClick, setContent }) => {
   };
 
   return (
-    <div id='home-user' className="container">
+    <div id='home-instructor'  className="container">
       <main className="main-content">
         <div className="main-card">
           <h2 className="welcome-title">
