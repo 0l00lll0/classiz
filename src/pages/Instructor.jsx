@@ -35,25 +35,25 @@ const Sidebar = ({ setContent, isSidebarVisible }) => {
       <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item"><h6 className="nav-header">Menu</h6></li>
         <li className="nav-item">
-          <a href="#home-instructor" className="nav-link active" onClick={() => setContent("Home")}>
+          <a href="#" className="nav-link active" onClick={() => setContent("Home")}>
             <Icon icon={homeIcon} /> Home
           </a>
         </li>
         <li className="nav-item">
-          <a href="#classes" className="nav-link" onClick={() => setContent("Classes")}>
+          <a href="#" className="nav-link" onClick={() => setContent("Classes")}>
             <Icon icon={classesIcon} /> Classes
           </a>
         </li>
         <li className="nav-item">
-          <a href="#create-class" className="nav-link" onClick={() => setContent("Create Class")}>
+          <a href="#" className="nav-link" onClick={() => setContent("Create Class")}>
             <Icon icon={createClassIcon} /> Create Class
           </a>
         </li>
-        {/* <li className="nav-item">
+        <li className="nav-item">
           <a href="#" className="nav-link" onClick={() => setContent("Create Activity")}>
             <Icon icon={createActivityIcon} /> Create Activity
           </a>
-        </li> */}
+        </li>
         <li className="nav-item">
           <div className="form-check form-switch">
             <input
@@ -70,7 +70,7 @@ const Sidebar = ({ setContent, isSidebarVisible }) => {
         </li>
         <li className="nav-item"><h6 className="nav-header">Assessment</h6></li>
         <li className="nav-item">
-          <a href="#quiz-instructor" className="nav-link" onClick={() => setContent("Quizzes")}>
+          <a href="#" className="nav-link" onClick={() => setContent("Quizzes")}>
             <Icon icon={quizzesIcon} /> Quizzes
           </a>
         </li>
